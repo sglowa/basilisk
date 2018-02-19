@@ -1,0 +1,103 @@
+test config
+
+
+cd C:\Program Files (x86)\Steam\steamapps\common\Half-Life 1 Source Deathmatch
+
+hl2.exe -game hl1mp -dev -console -sw +sv_lan 1 +map boot_camp +sv_cheats 1 
+
+hl2.exe -hijack
+
+
+sv_gravity <def=800>
+noclip <toggle>
+
+setpos x y z 
+setang x y
+
+spec_pos - returns current pos + ang
+getpos
+
+
+mat_viewportscale (1.0 <-> 0.01) //acid // 0.99 for movement illusion
+mat_surfacemat (0,1) // displays materials' names
+mat_reversedepth(0,1)
+mat_leafvis (0,1) // draw nearest leaf
+mat_fullbright <0,1,2> - 0::norm//1::ambient//2::lambert
+mat_bumpbasis (0,1) - draw xyz handlers
+mat_fillrate (0,1) - laserRoom
+mat_leasureFillRate (0,1) - blue laser room
+mat_filterlightmaps (0,1) - pixelize lightMaps
+mat_filterTextures (0,1) - pixelize textures
+mat_hsv (0,1) - b&w 
+mat_luxels (0,1) - blue grid (on everything)
+
+mat_motion_blur_enable (0,1)								//1
+mat_motion_blur_forward_enabled (0,1)					//1
+mat_motion_blur_percent_of_screen_max (-360 - 360)		//-90
+mat_motion_blur_rotation_intensity (0-999)				//999
+mat_motion_blur_strength (0-999)						//999
+
+
+cl_yawspeed 210
+cl_pitchspeed 225
+cl_sidespeed = "450"
+cl_upspeed = "320"
+cl_forwardspeed = "450"
+cl_backspeed = "450"
+c
+dlight_debug -  single lightflare	
+
+
+r_drawlightcache (0,1,2) // red lasers
+r_DrawDisp (0,1) // 0 removes (some)ground
+r_drawtranslucentrenderables (0,1) //removes glasses &windows &etc
+r_drawothermodels (0,1,2)// removes/wireframes player model
+r_aspectratio 
+r_farz <int>
+r_drawleaf
+r_visambient - draws grey cubes (req. mat_leafvis)
+r_drawentities (0,1,2,3) abstract gun (whiteCubes)
+
+
+
+
+
+
+alias lightswitcher1 "mat_fullbright 1; wait 20; mat_fullbright 0; wait 20; lightswitcher1"
+
+alias colorswitch1 "gl_clear_randomcolor 1; wait 10; gl_clear_randomcolor 0; wait 1000; colorswitch1"
+
+
+
+ 
+
+
+
+alias colorswitch1 "gl_clear_randomcolor 1; wait 10; gl_clear_randomcolor 0; wait 1000; colorswitch2"
+
+alias colorswitch2 "colorswitch1"
+
+alias colorswitch3 "alias colorswitch2; alias colorswitch 3 colorswitch 4"
+
+
+
+
+
+
+
+
+//nodeInput
+
+colSwitch
+
+//then
+
+if (colToggle == false)
+
+exec(alias enableCol "alias toggleCol disableCol; gl_clear_randomcolor 1; wait 10; gl_clear_randomcolor 0; wait 1000; enableCol";
+
+
+alias worldswitch1 "r_drawworld 1; wait 10; r_drawworld 0; wait 10; worldswitch1"
+
+
+alias worldswitch1 "r_drawworld 1; wait 10; r_drawworld 0; wait 333; worldswitch1"
