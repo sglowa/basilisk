@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/sglowa/basilisk#readme",
   "dependencies": {
+    "cmd": "^0.1.0",
+    "node-cmd": "^3.0.0",
     "underscore": "^1.8.3"
   }
 }
