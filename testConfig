@@ -3,6 +3,10 @@ test config
 
 cd C:\Program Files (x86)\Steam\steamapps\common\Half-Life 1 Source Deathmatch
 
+cd /c/Program\ Files\ \(x86\)/Steam/steamapps/common/Counter-Strike\ Source/
+
+
+
 hl2.exe -game hl1mp -dev -console -sw +sv_lan 1 +map boot_camp +sv_cheats 1 
 
 hl2.exe -hijack
